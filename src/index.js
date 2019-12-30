@@ -1,12 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import ReactDom from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.css';
+import './components/TicTacToe Game/styles.css'; 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import Counters from './components/counters';
+import Calculator  from './components/Calculator';
+import TicTacToeGame from './components/TicTacToe Game/TicTacToeGame';
+import Menu from './components/Menu';
+import Dictionary from './components/Dictionary';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
+//ReactDom.render(<Counter />,document.getElementById('root'));
+
+//ReactDom.render(<Counters />,document.getElementById('root'));
+
+//ReactDom.render(<TicTacToeGame />,document.getElementById('root'));
+
+//ReactDom.render(<Dictionary />,document.getElementById('root'));
+
+ReactDom.render(<Menu />,document.getElementById('root'));

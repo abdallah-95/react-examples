@@ -1,0 +1,26 @@
+td {
+    height: 80px;
+    width: 80px;
+
+    text-align: center;
+    font-size: 50px
+    } 
+
+.vert{
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.hori{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+#reset{
+margin-left:70px;
+}
+
+div{
+    font-weight: bold
+}
+  
