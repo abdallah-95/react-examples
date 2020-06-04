@@ -1,6 +1,8 @@
 import React from 'react';
 import '../css/dictionaryStyles.css';
 import $ from 'jquery'; 
+import logo from '../images/google-logo-9808.png';
+
 
 class Dictionary extends React.Component{
 
@@ -139,14 +141,14 @@ class Dictionary extends React.Component{
                 (this.state.menuOpened ?
                 
                 <div class="headerMenuOpened">
-                    <img src="https://www.stickpng.com/assets/images/5a951939c4ffc33e8c148af2.png" alt="logo" />
+                    <img src={logo} alt="logo" />
                     <h1>Dictionary</h1>
                 </div>  
                      
                 :
 
                 <div class="header">
-                    <img src="https://www.stickpng.com/assets/images/5a951939c4ffc33e8c148af2.png" alt="logo" />         
+                    <img src={logo} alt="logo" />         
                     <h1>oogle Dictionary</h1>
                 </div>
  

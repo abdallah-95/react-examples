@@ -15,7 +15,7 @@ class Menu extends React.Component{
     state = {
         menuOpened:false,
     }
-    tocggleMenu = () => {
+    toggleMenu = () => {
         let currentMenuState = this.state.menuOpened;
 
         if(currentMenuState === false){
@@ -66,7 +66,7 @@ class Menu extends React.Component{
                             <Route path="/TicTacToe" component={TicTacToeGame} />
                             {/* <Route path="/GoogleDictionary" component={Dictionary} /> */}
                             <Route path="/GoogleDictionary" component={() => <Dictionary MainMenuState={this.state.menuOpened}/>} />
-                            <Route path="/E-Learning" component={() => <ELearningMain handleELMenuStateChange={this.handleELMenuStateChange}/>} />
+                            {/* <Route path="/E-Learning" component={() => <ELearningMain handleELMenuStateChange={this.handleELMenuStateChange}/>} /> */}
                             {/* <Route path="/E-Learning" component={ELearningMain} /> */}
                         </div>
                     </div>
