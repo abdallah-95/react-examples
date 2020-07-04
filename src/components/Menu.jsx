@@ -33,9 +33,9 @@ class Menu extends React.Component{
     closeNav() {
         debugger;
         document.getElementById("mySidenav").style.width = "0";
-
+        document.getElementById("main").style.marginLeft = "0";
         
-        document.getElementById("main").style.marginLeft = !this.state.IsELMenuOpened ? "0" : "250px";
+        //document.getElementById("main").style.marginLeft = !this.state.IsELMenuOpened ? "0" : "250px";
     }
 
     Index() {
