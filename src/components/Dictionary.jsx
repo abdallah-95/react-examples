@@ -29,13 +29,19 @@ class Dictionary extends React.Component{
                        wordData:wordData
         });
     }
+    
+    //"https://googledictionaryapi.eu-gb.mybluemix.net/?define="+word.trim()+"&lang=en"
 
     getWordDefinition(word) {
+        debugger;
         let wordData = null;
         $.ajax({
             type: "GET",
             async: false,
-            url: "https://googledictionaryapi.eu-gb.mybluemix.net/?define="+word.trim()+"&lang=en",
+            url: "https://api.dictionaryapi.dev/api/v1/entries/en/"+word,
+            // headers:{
+            //     "Access-Control-Allow-Origin":"*"
+            // },
             success: function(data) {
                 wordData = data[0];
             }
