@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/react-examples/static/css/main.ddc23dd9.chunk.css",
+    "main.js": "/react-examples/static/js/main.20509907.chunk.js",
+    "main.js.map": "/react-examples/static/js/main.20509907.chunk.js.map",
+    "runtime-main.js": "/react-examples/static/js/runtime-main.8b4670b5.js",
+    "runtime-main.js.map": "/react-examples/static/js/runtime-main.8b4670b5.js.map",
+    "static/css/2.0cee8fd6.chunk.css": "/react-examples/static/css/2.0cee8fd6.chunk.css",
+    "static/js/2.90264c4c.chunk.js": "/react-examples/static/js/2.90264c4c.chunk.js",
+    "static/js/2.90264c4c.chunk.js.map": "/react-examples/static/js/2.90264c4c.chunk.js.map",
+    "index.html": "/react-examples/index.html",
+    "precache-manifest.ba6c402f52246dd325da42d8687c62e6.js": "/react-examples/precache-manifest.ba6c402f52246dd325da42d8687c62e6.js",
+    "service-worker.js": "/react-examples/service-worker.js",
+    "static/css/2.0cee8fd6.chunk.css.map": "/react-examples/static/css/2.0cee8fd6.chunk.css.map",
+    "static/css/main.ddc23dd9.chunk.css.map": "/react-examples/static/css/main.ddc23dd9.chunk.css.map",
+    "static/js/2.90264c4c.chunk.js.LICENSE.txt": "/react-examples/static/js/2.90264c4c.chunk.js.LICENSE.txt",
+    "static/media/google-logo-9808.png": "/react-examples/static/media/google-logo-9808.ff629c02.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8b4670b5.js",
+    "static/css/2.0cee8fd6.chunk.css",
+    "static/js/2.90264c4c.chunk.js",
+    "static/css/main.ddc23dd9.chunk.css",
+    "static/js/main.20509907.chunk.js"
+  ]
+}
