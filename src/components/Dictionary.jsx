@@ -35,11 +35,15 @@ class Dictionary extends React.Component{
         $.ajax({
             type: "GET",
             async: false,
-            url: "https://googledictionaryapi.eu-gb.mybluemix.net/?define="+word.trim()+"&lang=en",
+            url: "https://api.dictionaryapi.dev/api/v2/entries/en/"+word.trim(),
             success: function(data) {
                 wordData = data[0];
             }
-          });      
+          });
+
+        // let wordData = await fetch("https://api.dictionaryapi.dev/api/v2/entries/en/"+word.trim(),{
+        //     method:"Get"
+        //   }).then(response => response.json())
 
           return wordData; 
     }
@@ -56,7 +60,7 @@ class Dictionary extends React.Component{
     }
 
     renderWordData(thisObj){
-
+debugger;
         // let arr = [];
         // Object.keys(this.state.wordData.meaning).forEach(function(key) {
         //     arr.push(<h5 className="m-3">{key}</h5>) 
@@ -66,31 +70,30 @@ class Dictionary extends React.Component{
 
         let arr = [];
         let synonymsArr = [];
-        let wordMeaning = this.state.wordData.meaning;
+        let wordMeaning = this.state.wordData.meanings;
         let btnIDCount = 0;
 
-                Object.keys(wordMeaning).forEach(function(key) {
-                
-                arr.push(<h5 className="meaning m-3">{key}</h5>)
-                
-                wordMeaning[key].forEach(function(item) {
-                    arr.push(<div className="m-4"><li className="definition">{item.definition}</li>                    
-                            {item.example == null ?   <div className="example m-4"></div>: <div className="example m-4">Example: {item.example}</div>}
+                wordMeaning.forEach(element => {
+                    arr.push(<h5 className="meaning m-3">{element.partOfSpeech}</h5>)
+
+                    arr.push(<div className="m-4"><li className="definition">{element.definitions[0].definition}</li>                    
+                            {element.definitions[0].example == null ?   <div className="example m-4"></div>: <div className="example m-4">Example: {element.definitions[0].example}</div>}
                             
                     </div>)
-                    debugger;
 
-                    if(item.synonyms != null){
+                    if(element.definitions[0].synonyms != null){
                         synonymsArr = [];
-                        item.synonyms.forEach((synonymItem)=> {
+                        element.definitions[0].synonyms.forEach((synonymItem)=> {
                             synonymsArr.push(<li>{synonymItem}</li>)
                         });
                     }
+
+
                     arr.push(<div>
                         <button id={++btnIDCount} class="collapsible btn-info m-2" onClick={(e) => {thisObj.toggleCollapsible(thisObj, e.target.id)}}>Synonyms</button>
                         <div class="content m-2" ref={"content"+btnIDCount}>
                             {
-                            item.synonyms != null ?
+                            element.definitions[0].synonyms != null ?
                             <ul className="synonym">  
                             {synonymsArr}
                             </ul>
@@ -98,9 +101,45 @@ class Dictionary extends React.Component{
                             }
                         </div>
                     </div>)
-                    })
+             
                 arr.push(<hr className="hl"/>)
-              })
+                    
+                });
+
+
+
+            //     Object.keys(wordMeaning).forEach(function(key) {
+                
+            //     arr.push(<h5 className="meaning m-3">{key}</h5>)
+                
+            //     wordMeaning[key].forEach(function(item) {
+            //         arr.push(<div className="m-4"><li className="definition">{item.definition}</li>                    
+            //                 {item.example == null ?   <div className="example m-4"></div>: <div className="example m-4">Example: {item.example}</div>}
+                            
+            //         </div>)
+            //         debugger;
+
+            //         if(item.synonyms != null){
+            //             synonymsArr = [];
+            //             item.synonyms.forEach((synonymItem)=> {
+            //                 synonymsArr.push(<li>{synonymItem}</li>)
+            //             });
+            //         }
+            //         arr.push(<div>
+            //             <button id={++btnIDCount} class="collapsible btn-info m-2" onClick={(e) => {thisObj.toggleCollapsible(thisObj, e.target.id)}}>Synonyms</button>
+            //             <div class="content m-2" ref={"content"+btnIDCount}>
+            //                 {
+            //                 item.synonyms != null ?
+            //                 <ul className="synonym">  
+            //                 {synonymsArr}
+            //                 </ul>
+            //                 :<div></div>
+            //                 }
+            //             </div>
+            //         </div>)
+            //         })
+            //     arr.push(<hr className="hl"/>)
+            //   })
             
         return arr;
     }

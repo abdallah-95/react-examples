@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 import '../css/styles.css';
 
@@ -30,11 +30,9 @@ class Menu extends React.Component{
         }
       }
       
-    closeNav() {
+    closeNav = () => {
         debugger;
-        document.getElementById("mySidenav").style.width = "0";
-
-        
+        document.getElementById("mySidenav").style.width = "0";      
         document.getElementById("main").style.marginLeft = !this.state.IsELMenuOpened ? "0" : "250px";
     }
 
@@ -53,7 +51,7 @@ class Menu extends React.Component{
                         <Link to="/Counters">Counters</Link>
                         <Link to="/TicTacToe">Tic-Tac-Toe</Link>
                         <Link to="/GoogleDictionary">Google Dictionary</Link>
-                        <Link to="/E-Learning">E-Learning</Link>
+                        {/* <Link to="/E-Learning">E-Learning</Link> */}
                         </div>
 
                         <div id="main">
